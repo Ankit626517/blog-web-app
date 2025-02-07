@@ -1,6 +1,9 @@
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import React, { useState } from 'react'
 import {auth } from "./firebase"
+// import  Profile from './Profile'
+import Register from './Register'
+import { Link } from 'react-router-dom'
 
 function Login() {
     const [email , setEmail] = useState("")
@@ -10,7 +13,9 @@ function Login() {
         e.preventDefault()
         try{
             await signInWithEmailAndPassword(auth , email, password) 
+         
             console.log("logged in successfully")
+               window.location.href ="/Profile"
         }
         catch(error){
             console.log(error.message)
@@ -51,7 +56,7 @@ function Login() {
       </button>
 
       <p className="text-center text-gray-400 mt-4">
-        Don't have an account? <a href="/signup" className="text-blue-400 hover:underline">Sign Up</a>
+        Don't have an account? <Link to="/Register" className="text-blue-400 hover:underline">Register</Link>
       </p>
     </form>
   </div>

@@ -1,9 +1,13 @@
 import { createUserWithEmailAndPassword } from "firebase/auth";
+import { Link } from 'react-router-dom';
+// import Login from './Login'
+
 
 import React, { useState } from "react";
 import { auth ,db } from "./firebase";
 import { setDoc, doc } from "firebase/firestore";
 import { toast } from "react-toastify";
+// import {Link } from 'react-router-dom'
 
 import Login from './Login'
 
@@ -33,6 +37,7 @@ function Register() {
           // photo:""
         });
       }
+      window.location.href="/Login"
       toast.success("user is registerd", {
         position: "bottom-center",
       });
@@ -102,9 +107,9 @@ function Register() {
         Sign Up
       </button>
 
-      <p className="text-center text-gray-400 mt-4">
-        Already registered? <a href="/Login" className="text-blue-400 hover:underline">Login</a>
-      </p>
+       <p className="text-center text-gray-400 mt-4">
+               <Link to="/Login" className="text-blue-400 hover:underline">Login</Link>
+            </p>
     </form>
   </div>
   );
