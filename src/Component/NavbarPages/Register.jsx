@@ -4,52 +4,16 @@ import { Link } from 'react-router-dom';
 
 
 import React, { useState } from "react";
-import { auth ,db } from "./firebase";
-import { setDoc, doc } from "firebase/firestore";
+
 import { toast } from "react-toastify";
 // import {Link } from 'react-router-dom'
 
 import Login from './Login'
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [fname, setFname] = useState("");
-  const [lname, setLname] = useState("");
-  // const [msg  , setmsg] = useState()
  
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
-      // console.log(user);
-      // console.log("user register Secsesfully");
-      
 
-      if (user) {
-        // console.log("Kuchh gadbad hai re baba")
-        await setDoc(doc(db, "Users", user.uid), {
-          email: user.email,
-          firstName: fname,
-          lastName: lname,
-          // photo:""
-        });
-      }
-      window.location.href="/Login"
-      toast.success("user is registerd", {
-        position: "bottom-center",
-      });
-    // msg = "Register Secsecfully"
-      //  toast("Wow so easy!");
-    } catch (error) {
-      console.log(error.message);
-      toast.error(error.message, {
-        position: "bottom-center",
-      });
-    }
-  };
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black">

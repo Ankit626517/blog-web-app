@@ -1,34 +1,22 @@
-import './App.css';
-// import { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-
-import Login from './Component/Login';
-import Register from './Component/Register';
-import Profile from './Component/Profile';
-// import { auth } from './Component/firebase';
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Component/NavbarPages/Navbar";
+import Home from "./Component/NavbarPages/Home";
+import About from "./Component/NavbarPages/About";
+import Contact from "./Component/NavbarPages/Contact";
+import Categories from "./Component/NavbarPages/Categories";
 
 function App() {
- 
-
-
-
   return (
-  
     <Router>
-    <div className="App">
-      <div className="auth-wrapper">
-        <div className="auth-inner">
-          <Routes>
-          <Route path='/' element={<Login/>}/>
-            <Route path="/Login" element={<Login />} />
-            <Route path="/Register" element={< Register />} />
-            <Route path="/Profile" element={<Profile />} />
-          </Routes>
-          {/* <ToastContainer /> */}
-        </div>
-      </div>
-    </div>
-  </Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/categories" element={<Categories />} />
+      </Routes>
+    </Router>
   );
 }
 
