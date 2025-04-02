@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Footer from "../Footer";
 
 const Home = () => {
   return (
@@ -49,6 +50,7 @@ const Home = () => {
           ))}
         </div>
       </section>
+      <Footer/>
     </div>
   );
 };
