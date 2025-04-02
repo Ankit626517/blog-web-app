@@ -6,7 +6,7 @@ const Home = () => {
       {/* Hero Section */}
       <section className="h-[70vh] flex flex-col items-center justify-center text-center px-4">
         <motion.h1
-          className="text-5xl md:text-6xl font-bold mb-4"
+          className="text-5xl md:text-6xl font-bold mb-4 animate-pulse "
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}

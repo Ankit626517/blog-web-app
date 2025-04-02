@@ -18,7 +18,7 @@ function Register() {
   return (
     <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-gray-900 via-gray-800 to-black">
     
-    <form onSubmit={handleRegister} className="bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 p-8 rounded-xl shadow-2xl max-w-sm w-full border border-gray-700">
+    <form  className=" bg-gradient-to-r from-gray-800 via-gray-700 to-gray-900 p-8 rounded-xl shadow-2xl max-w-sm w-full border border-gray-700">
       <h3 className="text-2xl font-bold text-center text-gray-200 mb-6">Sign Up</h3>
 
       <div className="mb-4">

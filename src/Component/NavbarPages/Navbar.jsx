@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Menu, X, Search } from "lucide-react";
 import { Link } from "react-router-dom";
+import Register from "./Register";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,14 +27,14 @@ const Navbar = () => {
           <Link to="/contact" className="hover:underline">Contact</Link>
           
           {/* Search Bar */}
-          <div className="relative flex items-center bg-gradient-to-r from-gray-950 to-gray-650 border border-blue-400 rounded-md p-1">
+          {/* <div className="relative flex items-center bg-gradient-to-r from-gray-950 to-gray-650 border border-blue-400 rounded-md p-1">
             <input 
               type="text" 
               placeholder="Search..." 
               className="px-3 py-1 text-white focus:none" 
             />
-            <Search size={20} className="text-white ml-2" />
-          </div>
+            {/* <Search size={20} className="text-white ml-2" /> 
+          </div> */}
 
           <Link to="/login" className="hover:underline">Sign In / Sign Up</Link>
         </div>
@@ -66,10 +67,11 @@ const Navbar = () => {
           </div> */}
 
           <Link to="/login" className="hover:underline border-blue-950 bg-gradient-to-br from-gray-950 to-blue-950 border-2 p-3.5 rounded-2xl">
-            Sign In / Sign Up
+            Sign UP
           </Link>
         </div>
       )}
+       {/* <Register/> */}
     </nav>
   );
 };
