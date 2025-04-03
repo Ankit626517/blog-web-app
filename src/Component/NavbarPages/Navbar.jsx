@@ -14,26 +14,20 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white items-center">
           <Link to="/" className="hover:underline">Home</Link>
-          <div className="relative group">
-            <button className="hover:underline">Categories</button>
-            <div className="absolute left-0 hidden group-hover:block bg-gradient-to-br from-gray-950 to-blue-950 text-white shadow-md mt-1 rounded-lg border border-blue-400">
-              <Link to="/categories" className="block px-4 py-2 hover:bg-gray-950">Tech</Link>
-              <Link to="/categories" className="block px-4 py-2 hover:bg-gray-950">Lifestyle</Link>
-              <Link to="/categories" className="block px-4 py-2 hover:bg-gray-950">Food</Link>
-            </div>
-          </div>
+         <Link to="/categories" className="hover:underline">Categories</Link>
+          
           <Link to="/about" className="hover:underline">About Us</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
           
           {/* Search Bar */}
-          <div className="relative flex items-center bg-gradient-to-r from-gray-950 to-gray-650 border border-blue-400 rounded-md p-1">
+          {/* <div className="relative flex items-center bg-gradient-to-r from-gray-950 to-gray-650 border border-blue-400 rounded-md p-1">
             <input 
               type="text" 
               placeholder="Search..." 
               className="px-3 py-1 text-white focus:none" 
             />
             <Search size={20} className="text-white ml-2" />
-          </div>
+          </div> */}
 
           <Link to="/login" className="hover:underline">Sign In / Sign Up</Link>
         </div>

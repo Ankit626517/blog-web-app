@@ -5,6 +5,8 @@ import Home from "./Component/NavbarPages/Home";
 import About from "./Component/NavbarPages/About";
 import Contact from "./Component/NavbarPages/Contact";
 import Categories from "./Component/NavbarPages/Categories";
+import Login from "./Component/NavbarPages/Login";
+import Register from "./Component/NavbarPages/Register";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/categories" element={<Categories />} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/Register" element={<Register/>}></Route>
       </Routes>
     </Router>
   );
