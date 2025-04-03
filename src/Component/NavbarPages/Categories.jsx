@@ -29,7 +29,7 @@ function Categories() {
     
 
     {/* Category Filter */}
-    <div className="text-center py-4">
+    <div className="text-center py-4 pt-26">
       <h2 className="text-2xl font-bold mb-4">Select Blogs Category</h2>
       <div className="flex justify-center gap-3 flex-wrap">
         {categories.map((cat) => (

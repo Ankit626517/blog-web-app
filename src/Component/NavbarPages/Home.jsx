@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-// import Footer from "../Footer";
+import Footer from "../Footer";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -25,32 +25,31 @@ const Home = () => {
     <div className="bg-gradient-to-r from-gray-900 to-black min-h-screen text-white">
       {/* Hero Section */}
       <section className="h-[70vh] flex flex-col items-center justify-center text-center px-4">
-  <motion.h1
-    className="text-5xl md:text-6xl font-bold mb-4 animate-pulse"
-    initial={{ opacity: 0, y: -50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 1 }}
-  >
-    Share Your Thoughts, Inspire the World
-  </motion.h1>
-  <motion.p
-    className="text-lg md:text-xl mb-6"
-    initial={{ opacity: 0 }}
-    animate={{ opacity: 1 }}
-    transition={{ delay: 0.5, duration: 1 }}
-  >
-    Read insightful blogs or create your own. Connect, express, and inspire.
-  </motion.p>
-  <motion.a
-    href="#latest-blogs"
-    className="px-6 py-3 rounded-lg text-white font-semibold transition bg-gradient-to-br from-[#0BA7B4] to-[#006D81]"
-    whileHover={{ scale: 1.1 }}
-  >
-    Start Exploring
-  </motion.a>
-</section>
-
-
+        <motion.h1
+          className="text-5xl md:text-6xl font-bold mb-4 animate-pulse "
+          initial={{ opacity: 0, y: -50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          Welcome to My Blog
+        </motion.h1>
+        <motion.p
+          className="text-lg md:text-xl mb-6"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          Discover the latest trends, insights, and stories.
+        </motion.p>
+        <motion.a
+          href="#latest-blogs"
+          className=" px-6 py-3 rounded-lg text-white font-semibold  bg-gradient-to-br from-[#0BA7B4] to-[#006D81]"
+          whileHover={{ scale: 1.1 }}
+        >
+          Explore Blogs
+        </motion.a>
+      </section>
+      
       {/* Latest Blogs */}
       <section id="latest-blogs" className="container mx-auto px-4 py-10">
         <h2 className="text-3xl font-bold text-center mb-8">Latest Blogs</h2>
@@ -90,7 +89,7 @@ const Home = () => {
           )}
         </div>
       </section>
-      {/* <Footer /> */}
+      <Footer/>
     </div>
   );
 };
