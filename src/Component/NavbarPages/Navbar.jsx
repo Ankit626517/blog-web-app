@@ -7,8 +7,8 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gradient-to-br from-gray-950 to-blue-950 p-4 shadow-md border-b-2 border-blue-950 font-serif text-[18px]">
-      <div className="container mx-auto flex justify-between items-center">
+    <nav className="bg-gradient-to-br w-full from-gray-950 to-blue-950 p-4 shadow-md border-b-2 border-blue-950 font-serif text-[18px]">
+      <div className="container mx-auto flex  justify-between items-center">
         {/* Logo */}
         <Link to="/" className="text-white text-2xl font-bold">MyBlog</Link>
 
@@ -25,7 +25,7 @@ const Navbar = () => {
           </div>
           <Link to="/about" className="hover:underline">About Us</Link>
           <Link to="/contact" className="hover:underline">Contact</Link>
-          
+
           {/* Search Bar */}
           {/* <div className="relative flex items-center bg-gradient-to-r from-gray-950 to-gray-650 border border-blue-400 rounded-md p-1">
             <input 
@@ -36,7 +36,7 @@ const Navbar = () => {
             {/* <Search size={20} className="text-white ml-2" /> 
           </div> */}
 
-          <Link to="/login" className="hover:underline">Sign In / Sign Up</Link>
+          <Link to="/register" className="hover:underline hover:text-gra-200 hover:bg-black  px-5 py-2 border-2 rounded-3xl">Creat Account </Link>
         </div>
 
         {/* Mobile Menu Button */}
@@ -67,11 +67,11 @@ const Navbar = () => {
           </div> */}
 
           <Link to="/login" className="hover:underline border-blue-950 bg-gradient-to-br from-gray-950 to-blue-950 border-2 p-3.5 rounded-2xl">
-            Sign UP
+            Hello
           </Link>
         </div>
       )}
-       {/* <Register/> */}
+      {/* <Register/> */}
     </nav>
   );
 };
