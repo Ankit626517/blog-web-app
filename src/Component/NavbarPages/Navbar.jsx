@@ -52,7 +52,7 @@ const Navbar = () => {
     <nav ref={navRef} className="fixed top-0 left-0 w-full bg-transparent p-4 shadow-md border-b-2 border-blue-950 font-serif text-[18px] z-50 transition-colors duration-300">
       <div className="container mx-auto flex justify-between items-center">
         {/* Logo */}
-        <Link to="/" className="text-white text-2xl font-bold"><img class="w-40" src={logo} alt="" /></Link>
+        <Link to="/" className="text-white text-2xl font-bold"><img className="w-40" src={logo} alt="" /></Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white items-center">
