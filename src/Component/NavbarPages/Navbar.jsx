@@ -49,19 +49,13 @@ const Navbar = () => {
   }, [isOpen]);
 
   return (
-<<<<<<< HEAD
     <nav className="bg-gradient-to-br w-full from-gray-950 to-blue-950 p-4 shadow-md border-b-2 border-blue-950 font-serif text-[18px]">
       <div className="container mx-auto flex  justify-between items-center">
-=======
-    <nav ref={navRef} className="fixed top-0 left-0 w-full bg-transparent p-4 shadow-md border-b-2 border-blue-950 font-serif text-[18px] z-50 transition-colors duration-300">
-      <div className="container mx-auto flex justify-between items-center">
->>>>>>> origin/nayanwork
         {/* Logo */}
-        <Link to="/" className="text-white text-2xl font-bold"><img class="w-40" src={logo} alt="" /></Link>
+        <Link to="/" className="text-white text-2xl font-bold"><img className="w-40" src={logo} alt="" /></Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white items-center">
-<<<<<<< HEAD
           <Link to="/" className="hover:underline">Home</Link>
           <div className="relative group">
             <button className="hover:underline">Categories</button>
@@ -85,13 +79,6 @@ const Navbar = () => {
           </div> */}
 
           <Link to="/register" className="hover:underline hover:text-gra-200 hover:bg-black  px-5 py-2 border-2 rounded-3xl">Creat Account </Link>
-=======
-          <Link to="/" className="hover:border-b-2">Home</Link>
-          <Link to="/categories" className="hover:border-b-2">Categories</Link>
-          <Link to="/about" className="hover:border-b-2">About Us</Link>
-          <Link to="/contact" className="hover:border-b-2">Contact</Link>
-          <Link to="/login" className="hover:border-b-2">Sign In / Sign Up</Link>
->>>>>>> origin/nayanwork
         </div>
 
         {/* Mobile Menu Button */}
@@ -104,31 +91,6 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu */}
-<<<<<<< HEAD
-      {isOpen && (
-        <div className="md:hidden bg-gradient-to-t from-gray-950 to-blue-950 text-white flex flex-col p-4 space-y-2 border-t-2 border-blue-950 items-center w-2xs rounded-3xl font-bold gap-0.5 absolute top-17 right-0">
-          <Link to="/" className="hover:underline">Home</Link>
-          <Link to="/categories" className="hover:underline">Categories</Link>
-          <Link to="/about" className="hover:underline">About Us</Link>
-          <Link to="/contact" className="hover:underline">Contact</Link>
-
-          {/* Search Bar for Mobile */}
-          {/* <div className="relative flex items-center bg-gradient-to-r from-gray-500 to-black border border-blue-400 rounded-md p-1">
-            <input 
-              type="text" 
-              placeholder="Search..." 
-              className="w-auto px-3 py-1 bg-transparent text-white focus:outline-none" 
-            />
-            <Search size={20} className="text-white ml-2" />
-          </div> */}
-
-          <Link to="/login" className="hover:underline border-blue-950 bg-gradient-to-br from-gray-950 to-blue-950 border-2 p-3.5 rounded-2xl">
-            Hello
-          </Link>
-        </div>
-      )}
-      {/* <Register/> */}
-=======
       <div
         ref={mobileMenuRef}
         className="md:hidden bg-gradient-to-t from-gray-950 to-blue-950 text-white flex flex-col p-4 space-y-2 border-t-2 border-blue-950 items-center w-2xs rounded-3xl font-bold gap-0.5 absolute top-17 right-0 opacity-0 transform translate-x-52"
@@ -141,7 +103,6 @@ const Navbar = () => {
           Sign Up
         </Link>
       </div>
->>>>>>> origin/nayanwork
     </nav>
   );
 };
