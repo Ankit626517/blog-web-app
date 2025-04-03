@@ -24,7 +24,7 @@ const Home = () => {
         </motion.p>
         <motion.a
           href="#latest-blogs"
-          className="bg-blue-600 px-6 py-3 rounded-lg text-white font-semibold hover:bg-blue-700 transition"
+          className=" px-6 py-3 rounded-lg text-white font-semibold hover:bg-gradient-to-bl to-blue-600 transition bg-gradient-to-br to-#0BA7B4"
           whileHover={{ scale: 1.1 }}
         >
           Explore Blogs
