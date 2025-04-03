@@ -1,7 +1,26 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Footer from "../Footer";
 
 const Home = () => {
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(() => {
+    const fetchBlogs = async () => {
+      try {
+        const response = await fetch(
+          "https://newsdata.io/api/1/news?apikey=pub_77902d12fd11c2a5169d038b59f7b75c5d30a&q=blog"
+        );
+        const data = await response.json();
+        setBlogs(data.results || []); // Ensure results exist
+      } catch (error) {
+        console.error("Error fetching blogs:", error);
+      }
+    };
+
+    fetchBlogs();
+  }, []);
+
   return (
     <div className="bg-gradient-to-r from-gray-900 to-black min-h-screen text-white">
       {/* Hero Section */}
@@ -35,22 +54,42 @@ const Home = () => {
       <section id="latest-blogs" className="container mx-auto px-4 py-10">
         <h2 className="text-3xl font-bold text-center mb-8">Latest Blogs</h2>
         <div className="grid md:grid-cols-3 gap-8">
-          {[1, 2, 3].map((id) => (
-            <motion.div
-              key={id}
-              className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
-              whileHover={{ scale: 1.05 }}
-            >
-              <div className="w-full h-40 bg-gray-700 rounded-md mb-4 flex items-center justify-center">
-                <p className="text-gray-400">Image Placeholder</p>
-              </div>
-              <h3 className="text-xl font-semibold">Blog Title {id}</h3>
-              <p className="text-blue-400 text-sm">Category</p>
-            </motion.div>
-          ))}
+          {blogs.length > 0 ? (
+            blogs.map((blog, index) => (
+              <motion.div
+                key={index}
+                className="bg-gray-800 p-4 rounded-lg shadow-lg hover:shadow-xl transition"
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="w-full h-40 bg-gray-700 rounded-md mb-4 flex items-center justify-center">
+                  {blog.image_url ? (
+                    <img
+                      src={blog.image_url}
+                      alt={blog.title}
+                      className="w-full h-full object-cover rounded-md"
+                    />
+                  ) : (
+                    <p className="text-gray-400">No Image Available</p>
+                  )}
+                </div>
+                <h3 className="text-xl font-semibold">{blog.title}</h3>
+                <p className="text-blue-400 text-sm">{blog.category || "Uncategorized"}</p>
+                <a
+                  href={blog.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-500 hover:underline block mt-2"
+                >
+                  Read More
+                </a>
+              </motion.div>
+            ))
+          ) : (
+            <p className="text-center text-gray-400">Loading blogs...</p>
+          )}
         </div>
       </section>
-      <Footer/>
+      <Footer />
     </div>
   );
 };
