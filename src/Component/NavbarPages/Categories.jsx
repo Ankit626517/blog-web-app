@@ -2,7 +2,7 @@ import React from 'react'
 
 function Categories() {
   return (
-    <div>
+    <div className='con'>
       <h1>i am cat</h1>
     </div>
   )
