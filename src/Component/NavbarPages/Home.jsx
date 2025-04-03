@@ -43,7 +43,7 @@ const Home = () => {
         </motion.p>
         <motion.a
           href="#latest-blogs"
-          className=" px-6 py-3 rounded-lg text-white font-semibold hover:bg-gradient-to-bl to-blue-600 transition bg-gradient-to-br to-#0BA7B4"
+          className=" px-6 py-3 rounded-lg text-white font-semibold  bg-gradient-to-br from-[#0BA7B4] to-[#006D81]"
           whileHover={{ scale: 1.1 }}
         >
           Explore Blogs
@@ -94,4 +94,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Home
