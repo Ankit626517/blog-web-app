@@ -1,11 +1,10 @@
-import React from 'react'
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 
-function About() {
+export default function About() {
   return (
-    <div>
-      <h1>i am About</h1>
-    </div>
-  )
+    <>
+   <p>About</p>
+    </>
+  );
 }
-
-export default About
