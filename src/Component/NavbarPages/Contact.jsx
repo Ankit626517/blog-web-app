@@ -1,7 +1,25 @@
-import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { motion } from "framer-motion";
+import { useState } from "react";
+import { FaEnvelope, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 
 export default function Contact() {
+  const [form, setForm] = useState({
+    fname: "",
+    email: "",
+    massege: "",
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    // console.log(e.target.name  )
+    setForm((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit =(e) =>{
+    e.preventDefault();
+    console.log(form)
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] to-[#dbeaff] dark:from-[#0f172a] dark:to-[#1e293b] px-6 py-20 flex items-center justify-center">
       <motion.div
@@ -15,7 +33,8 @@ export default function Contact() {
         </h2>
 
         <p className="text-center text-gray-600 dark:text-gray-300 mb-12">
-          Have a question, feedback or just want to chat? Fill the form or use the info below.
+          Have a question, feedback or just want to chat? Fill the form or use
+          the info below.
         </p>
 
         <div className="grid md:grid-cols-2 gap-12">
@@ -23,42 +42,69 @@ export default function Contact() {
           <div className="space-y-8 text-center md:text-left">
             <div className="flex flex-col items-center md:items-start">
               <FaEnvelope className="text-blue-500 dark:text-blue-400 text-3xl mb-2" />
-              <p className="text-gray-800 dark:text-white font-semibold">Email</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">contact@example.com</p>
+              <p className="text-gray-800 dark:text-white font-semibold">
+                Email
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                contact@example.com
+              </p>
             </div>
             <div className="flex flex-col items-center md:items-start">
               <FaPhoneAlt className="text-green-500 dark:text-green-400 text-3xl mb-2" />
-              <p className="text-gray-800 dark:text-white font-semibold">Phone</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">+91 12345 67890</p>
+              <p className="text-gray-800 dark:text-white font-semibold">
+                Phone
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                +91 12345 67890
+              </p>
             </div>
             <div className="flex flex-col items-center md:items-start">
               <FaMapMarkerAlt className="text-red-500 dark:text-red-400 text-3xl mb-2" />
-              <p className="text-gray-800 dark:text-white font-semibold">Location</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">Indore, MP, India</p>
+              <p className="text-gray-800 dark:text-white font-semibold">
+                Location
+              </p>
+              <p className="text-gray-600 dark:text-gray-300 text-sm">
+                Indore, MP, India
+              </p>
             </div>
           </div>
 
           {/* Contact Form */}
-          <form className="space-y-6">
+          <form onSubmit={handleSubmit} className="space-y-6">
             <div>
-              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Name</label>
+              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">
+                Name
+              </label>
               <input
+                onChange={handleChange}
+                name="fname"
+                value={form.fname}
                 type="text"
                 placeholder="Your Name"
                 className="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Email</label>
+              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">
+                Email
+              </label>
               <input
+                onChange={handleChange}
+                name="email"
+                value={form.email}
                 type="email"
                 placeholder="you@example.com"
                 className="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div>
-              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">Message</label>
+              <label className="block text-sm text-gray-700 dark:text-gray-300 mb-1">
+                Message
+              </label>
               <textarea
+                onChange={handleChange}
+                name="massege"
+                value={form.massege}
                 rows="4"
                 placeholder="Your message..."
                 className="w-full px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-700 dark:text-white outline-none focus:ring-2 focus:ring-blue-500 resize-none"
