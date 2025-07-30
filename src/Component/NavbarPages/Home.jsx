@@ -24,7 +24,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-gray-900 to-black min-h-screen text-white">
+    <div className="bg-gradient-to-r pt-10 from-gray-900 to-black min-h-screen text-white">
       {/* Hero Section */}
       <section className="h-[70vh] flex flex-col items-center justify-center text-center px-4">
   <motion.h1

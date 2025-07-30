@@ -7,3 +7,8 @@
     scrollbar-width: none;
     -ms-overflow-style: none;  /* IE and Edge */
   }
+
+  .cl-avatarBox{
+    width: 2.5rem;
+    height: 2.5rem;
+}
