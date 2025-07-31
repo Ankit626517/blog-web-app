@@ -21,7 +21,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#f0f4ff] to-[#dbeaff] dark:from-[#0f172a] dark:to-[#1e293b] px-6 py-20 flex items-center justify-center">
+    <div className="min-h-screen  pt-25  bg-gradient-to-br from-[#f0f4ff] to-[#dbeaff] dark:from-[#0f172a] dark:to-[#1e293b] px-6 py-20 flex items-center justify-center">
       <motion.div
         initial={{ opacity: 0, y: 60 }}
         animate={{ opacity: 1, y: 0 }}
