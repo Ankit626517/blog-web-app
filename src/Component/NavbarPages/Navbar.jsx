@@ -84,16 +84,15 @@ const Navbar = () => {
           <Link to="/contact" className="hover:border-b-2">
             Contact
           </Link>
-         
         </div>
-         <div className="hidden md:flex">
-            <SignedOut>
-              <SignInButton  className="bg-gradient-to-br font-mono from-[#0BA7B4] to-[#006D81] py-1 px-3 rounded-xl"/>
-            </SignedOut>
-            <SignedIn >
-              <UserButton />
-            </SignedIn>
-          </div>
+        <div className="hidden md:flex">
+          <SignedOut>
+            <SignInButton className="bg-gradient-to-br font-mono from-[#0BA7B4] to-[#006D81] py-1 px-3 rounded-xl" />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
 
         {/* Mobile Menu Button */}
         <button
@@ -121,15 +120,14 @@ const Navbar = () => {
         <Link to="/contact" className="hover:underline">
           Contact
         </Link>
-         <div className="">
-            <SignedOut>
-              <SignInButton  className="bg-gradient-to-br font-mono from-[#0BA7B4] to-[#006D81] py-1 px-3 rounded-xl"/>
-            </SignedOut>
-            <SignedIn >
-              <UserButton />
-            </SignedIn>
-          </div>
-          
+        <div className="">
+          <SignedOut>
+            <SignInButton className="bg-gradient-to-br font-mono from-[#0BA7B4] to-[#006D81] py-1 px-3 rounded-xl" />
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
+        </div>
       </div>
     </nav>
   );

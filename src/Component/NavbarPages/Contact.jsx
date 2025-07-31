@@ -15,10 +15,10 @@ export default function Contact() {
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit =(e) =>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(form)
-  }
+    console.log(form);
+  };
 
   return (
     <div className="min-h-screen  pt-25  bg-gradient-to-br from-[#f0f4ff] to-[#dbeaff] dark:from-[#0f172a] dark:to-[#1e293b] px-6 py-20 flex items-center justify-center">
