@@ -10,7 +10,12 @@ import Footer from "./Component/Footer";
 import CreateBlog from "./Component/CreateBlog";
 import PrivateRoute from "./PrivateRoute";
 // cleeck Auth start
-
+import {
+  ClerkProvider,
+  SignedIn,
+  SignedOut,
+  RedirectToSignIn,
+} from "@clerk/clerk-react";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
