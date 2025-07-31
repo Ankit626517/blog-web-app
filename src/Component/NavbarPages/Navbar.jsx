@@ -1,7 +1,7 @@
 import { Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
-import gsap from "gsap";
+// import gsap from "gsap";
 import logo from "../../images/logo3.png";
 import {
   SignedIn,
