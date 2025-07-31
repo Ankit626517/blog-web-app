@@ -1,4 +1,4 @@
-import React, { useState , useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useUser } from "@clerk/clerk-react";
 
 function CreateBlog() {
@@ -20,22 +20,20 @@ function CreateBlog() {
   };
 
   const { user } = useUser();
-const[name , setName] = useState()
-useEffect(() => {
-  if (user) {
-    console.log("User ID:", user.id);
-      setName( user.fullName);
-    console.log("Email:", user.emailAddresses[0].emailAddress);
-  }
-}, [user]);
+  const [name, setName] = useState();
+  useEffect(() => {
+    if (user) {
+      console.log("User ID:", user.id);
+      setName(user.fullName);
+      console.log("Email:", user.emailAddresses[0].emailAddress);
+    }
+  }, [user]);
 
   return (
     <div className="max-w-3xl mt-25 mx-auto  p-6 bg-white rounded-lg shadow-md dark:bg-slate-800">
       <h1 className="text-white font-bold text-2xl text-center">{name}</h1>
       <h2 className="text-2xl font-bold mb-6 text-center text-blue-600 dark:text-white">
-
         📝 Create a New Blog
-      
       </h2>
       <form onSubmit={handleSubmit} className="space-y-5">
         {/* Title */}
