@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 // import Footer from "../Footer";
 import { Link } from "react-router-dom";
 
+import { useUser } from "@clerk/clerk-react";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
@@ -23,10 +24,28 @@ const Home = () => {
     fetchBlogs();
   }, []);
 
+   const { user } = useUser();
+const[name , setName] = useState()
+useEffect(() => {
+  if (user) {
+    console.log("User ID:", user.id);
+      setName( user.fullName);
+    console.log("Email:", user.emailAddresses[0].emailAddress);
+  }
+}, [user]);
+
   return (
     <div className="bg-gradient-to-r pt-10 from-gray-900 to-black min-h-screen text-white">
       {/* Hero Section */}
       <section className="h-[70vh] flex flex-col items-center justify-center text-center px-4">
+         <motion.h1
+    className="text-5xl md:text-6xl font-bold mb-4 animate-pulse"
+    initial={{ opacity: 0, y: -50 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1 }}
+  >
+   Welcome <span className="text-blue-700">{name}</span>  
+  </motion.h1>
   <motion.h1
     className="text-5xl md:text-6xl font-bold mb-4 animate-pulse"
     initial={{ opacity: 0, y: -50 }}
