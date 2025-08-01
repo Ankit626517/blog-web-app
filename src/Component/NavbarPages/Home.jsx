@@ -2,11 +2,14 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 // import Footer from "../Footer";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 import { useUser } from "@clerk/clerk-react";
 
 const Home = () => {
   const [blogs, setBlogs] = useState([]);
+
+  // Fetch API
 
   useEffect(() => {
     const fetchBlogs = async () => {
@@ -24,6 +27,10 @@ const Home = () => {
     fetchBlogs();
   }, []);
 
+
+
+   
+
   const { user } = useUser();
   const [name, setName] = useState();
   useEffect(() => {
@@ -35,7 +42,7 @@ const Home = () => {
   }, [user]);
 
   return (
-    <div className="bg-gradient-to-r pt-20 from-gray-900 to-black min-h-screen text-white">
+    <div className="bg-gradient-to-r pt-25 from-gray-900 to-black min-h-screen text-white">
       {/* Hero Section */}
       <section className="h-[70vh] flex flex-col items-center justify-center text-center px-4">
         <motion.h1
