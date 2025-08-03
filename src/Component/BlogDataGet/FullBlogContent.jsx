@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import DOMPurify from "dompurify";
 
 function FullBlogContent() {
-  const { id } = useParams(); // 👈 Get blog id from URL
+  const { id } = useParams();
   const [blog, setBlog] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -23,27 +23,58 @@ function FullBlogContent() {
     fetchBlog();
   }, [id]);
 
-  if (loading) return <p className="p-4">Loading...</p>;
-  if (!blog) return <p className="p-4">Blog not found</p>;
+  if (loading) return <p className="text-white p-8">Loading...</p>;
+  if (!blog) return <p className="text-white p-8">Blog not found</p>;
 
   return (
-    <div className="p-4 text-blue-900 bg-white rounded-lg shadow-md">
-      <h1 className="text-3xl font-bold mb-2 text-blue-700">{blog.title}</h1>
-      <p className="text-sm text-gray-500 mb-2">{blog.category}</p>
-      {blog.image && (
-        <img
-          src={blog.image}
-          alt={blog.title}
-          className="w-full max-w-md mb-4"
+    <div className="min-h-screen pt-25 bg-gray-600 py-10 px-4 sm:px-6 lg:px-8 flex justify-center">
+      <div className="bg-gray-700 shadow-lg rounded-lg max-w-3xl w-full p-6 text-white">
+
+        {/* Back to home */}
+        <div className="mb-6">
+          <Link
+            to="/"
+            className="text-blue-100 hover:underline hover:text-blue-100 transition"
+          >
+            ← Back To Home
+          </Link>
+        </div>
+
+        {/* Title */}
+        <h1 className="text-3xl font-bold text-white mb-2">{blog.title}</h1>
+
+        {/* Category */}
+        <p className="text-sm text-gray-300 mb-4">{blog.category}</p>
+
+        {/* Image */}
+        {blog.image && (
+          <img
+            src={blog.image}
+            alt={blog.title}
+            className="w-full h-64 object-cover rounded-md mb-6"
+          />
+        )}
+
+        {/* Content */}
+        <div
+          className="prose prose-invert max-w-none text-gray-100"
+          dangerouslySetInnerHTML={{
+            __html: DOMPurify.sanitize(blog.content),
+          }}
         />
-      )}
-      <div
-        className="text-gray-800"
-        dangerouslySetInnerHTML={{
-          __html: DOMPurify.sanitize(blog.content),
-        }}
-      ></div>
-      <p className="mt-4 text-right font-medium">— {blog.name}</p>
+
+        {/* Author and Date */}
+        <div className="flex justify-between items-center mt-8 text-sm text-gray-300">
+          <p className="font-medium">— {blog.name}</p>
+          <span>
+            {new Date(blog.createdAt).toLocaleDateString("en-GB", {
+              day: "2-digit",
+              month: "short",
+              year: "numeric",
+            })}
+          </span>
+        </div>
+      </div>
     </div>
   );
 }
