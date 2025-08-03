@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());  // ✅ JSON parser must be before routes
 app.use("/", router);     // ✅ Routes
 
+// GET single blog by ID
+// app.get("/getBlogs/:id", router);
+
 // ✅ Connect to DB and start server
 connectDb().then(() => {
   app.listen(PORT, () => {

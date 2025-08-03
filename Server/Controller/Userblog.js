@@ -1,11 +1,11 @@
-const Blog = require("../Models/userBlog_model");
+const Blogs = require("../Models/userBlog_model");
 
 const Userblog = async (req, res) => {
   try {
-    const { title, category, image, content, name, email, userId } = req.body;
+    const { title, category, image, content, name, email, userId ,userImageURL} = req.body;
 
     // Create new blog
-    const newBlog = new Blog({
+    const newBlog = new Blogs({
       title,
       category,
       image,
@@ -13,13 +13,16 @@ const Userblog = async (req, res) => {
       name,
       email,
       userId,
+      userImageURL,
     });
 
     // Save to MongoDB
     const savedBlog = await newBlog.save();
+    console.log(savedBlog)
+
 
     // Logging the incoming data (optional)
-    console.log("Received blog data:", req.body);
+    // console.log("Received blog data:", req.body);
 
     // Send only one response
     res.status(201).json({

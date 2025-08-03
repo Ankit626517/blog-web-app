@@ -24,29 +24,23 @@ const blogSchema = new mongoose.Schema(
       type: String, // Full name from Clerk
       required: true,
     },
-    email: {
-      type: String, // Email from Clerk
-      required: true,
-      trim: true,
-      lowercase: true,
-    },
-    userId: {
-      type: String, // Clerk user ID
-      required: true,
-    },
+
+   userImageURL: {
+  type: String, // URL of the user's profile image
+  required: false,
+  trim: true,
+},
   },
   {
     timestamps: true, // automatically adds createdAt and updatedAt
   }
- 
 );
 
-module.exports = mongoose.model("UserBlog", blogSchema);
-
+const Blogs = mongoose.model("UserBlog", blogSchema);
+module.exports = Blogs;
 
 // module.exports = mongoose.model("Blog", blogSchema);
 
-
-  // {
-  //   timestamps: true, // automatically adds createdAt and updatedAt
-  // }
+// {
+//   timestamps: true, // automatically adds createdAt and updatedAt
+// }

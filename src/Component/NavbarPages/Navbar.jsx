@@ -23,9 +23,12 @@ const Navbar = () => {
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-6 text-white items-center">
           <Link to="/" className="hover:border-b-2">Home</Link>
-          <Link to="/categories" className="hover:border-b-2">Categories</Link>
+          
           <Link to="/about" className="hover:border-b-2">About Us</Link>
           <Link to="/contact" className="hover:border-b-2">Contact</Link>
+          <Link to="/yourpost" className="hover:border-b-2">YourPost</Link>
+
+
         </div>
 
         {/* Auth Buttons (Desktop) */}
@@ -51,7 +54,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden bg-gray-800 text-white flex flex-col p-4 space-y-2 border-t border-blue-800 items-center rounded-b-xl mt-2">
           <Link to="/" onClick={() => setIsOpen(false)} className="hover:underline">Home</Link>
-          <Link to="/categories" onClick={() => setIsOpen(false)} className="hover:underline">Categories</Link>
+          {/* <Link to="/categories" onClick={() => setIsOpen(false)} className="hover:underline">Categories</Link> */}
           <Link to="/about" onClick={() => setIsOpen(false)} className="hover:underline">About Us</Link>
           <Link to="/contact" onClick={() => setIsOpen(false)} className="hover:underline">Contact</Link>
           <div className="mt-2">

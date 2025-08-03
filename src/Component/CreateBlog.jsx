@@ -10,7 +10,8 @@ import axios from "axios";
 function CreateBlog() {
   const { user } = useUser();
   console.log(user);
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
+  const [createdBlog, setCreatedBlog] = useState(null);
 
   const [blog, setBlog] = useState({
     title: "",
@@ -18,20 +19,26 @@ function CreateBlog() {
     image: "",
     content: "",
   });
+  console.log(blog)
 
   useEffect(() => {
     if (user) {
+      
       setBlog((prevBlog) => ({
         ...prevBlog,
         name: user.fullName || "",
         email: user.primaryEmailAddress?.emailAddress || "",
         userId: user.id || "",
+        userImageURL : user.imageUrl || "",
+        
       }));
     }
   }, [user]);
+  // console.log(user)
 
   const handleChange = (e) => {
     setBlog({ ...blog, [e.target.name]: e.target.value });
+    // console.log(setBlog)
   };
 
   const handleSubmit = async (e) => {
@@ -57,6 +64,7 @@ function CreateBlog() {
 
       toast.success(`✅ ${name}, your blog was submitted successfully!`);
       console.log("Blog submitted:");
+      
 
       setBlog({
         title: "",
