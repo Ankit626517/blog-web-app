@@ -7,10 +7,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "postinstall": "npm rebuild @tailwindcss/oxide --force"
+  
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.38.0",
+    "@tailwindcss/oxide": "^4.1.11",
     "@tailwindcss/vite": "^4.0.3",
     "axios": "^1.8.4",
     "cors": "^2.8.5",
