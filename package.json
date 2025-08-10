@@ -8,7 +8,7 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "npm rebuild @tailwindcss/oxide --force"
+    "postinstall": "npm rebuild @tailwindcss/oxide --force && npm rebuild lightningcss --force"
   
   },
   "dependencies": {
