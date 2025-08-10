@@ -57,7 +57,7 @@ function CreateBlog() {
   };
 
   return (
-   <div className="px-3 bg-gray-800 mt-16 md:mt-20 mx-auto  sm:px-6 lg:px-8">
+   <div className="px-3  bg-gray-800 mt-16 md:mt-20 mx-auto  sm:px-6 lg:px-8">
   <ToastContainer position="top-right" autoClose={3000} />
 
   <div className="bg-white dark:bg-gray-900 p-6 md:p-10 rounded-xl shadow-lg border border-gray-200 dark:border-gray-700">
