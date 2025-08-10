@@ -13,7 +13,7 @@ function UserPost() {
       try {
         if (!user) return;
         const res = await axios.get(
-          `http://localhost:9000/getUserBlogs/${user.id}`
+          `https://blog-web-app-c0bg.onrender.com/getUserBlogs/${user.id}`
         );
         setBlogs(res.data.blogs);
       } catch (error) {

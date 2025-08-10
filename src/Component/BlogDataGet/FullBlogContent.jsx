@@ -11,7 +11,7 @@ function FullBlogContent() {
   useEffect(() => {
     const fetchBlog = async () => {
       try {
-        const res = await axios.get(`http://localhost:9000/getBlogs/${id}`);
+        const res = await axios.get(`https://blog-web-app-c0bg.onrender.com/getBlogs/${id}`);
         setBlog(res.data.blog);
         setLoading(false);
       } catch (error) {

@@ -9,7 +9,7 @@ function GetBlogData() {
   useEffect(() => {
     const fetchBlogs = async () => {
       try {
-        const res = await axios.get("http://localhost:9000/getBlogs");
+        const res = await axios.get("https://blog-web-app-c0bg.onrender.com/getBlogs");
         setBlogs(res.data.blogs);
         setLoading(false);
       } catch (error) {

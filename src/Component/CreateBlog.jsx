@@ -40,7 +40,7 @@ function CreateBlog() {
     }
 
     try {
-      await axios.post("http://localhost:9000/createBlog", blog);
+      await axios.post("https://blog-web-app-c0bg.onrender.com/createBlog", blog);
       toast.success("✅ Blog submitted successfully!");
 
       setBlog({
