@@ -9,9 +9,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "postinstall": "npm rebuild @tailwindcss/oxide --force && npm rebuild lightningcss --force"
-  
   },
   "dependencies": {
+    "4": "^0.0.0",
     "@clerk/clerk-react": "^5.38.0",
     "@tailwindcss/oxide": "^4.1.11",
     "@tailwindcss/vite": "^4.0.3",
