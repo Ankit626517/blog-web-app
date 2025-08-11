@@ -63,19 +63,18 @@ git clone https://github.com/Ankit626517/blog-web-app.git
 cd blog-web-app
 
 # Install frontend dependencies
-cd client
 npm install
 
 # Install backend dependencies
-cd ../server
+cd server
 npm install
 
 # Add your environment variables in `.env` file
 
 # Start frontend
-cd ../client
-npm start
+
+npm run dev
 
 # Start backend
-cd ../server
+cd server
 npm run dev
