@@ -1,6 +1,6 @@
 # 📝 Blog Website - MERN Stack Blog Platform
 
-> ⭐ **Live Demo:** [yourblog-six.vercel.app](https://yourblog-six.vercel.app/)
+> ⭐ **Live Demo:** [yourblog-six.vercel.app](https://blog-web-app-snowy.vercel.app/)
 
 Welcome to my fully responsive **Blog Website** built with the **MERN Stack**! This app allows users to securely create, read, update, and delete (CRUD) blog posts. The platform provides a smooth and modern blogging experience with user authentication and stylish UI.
 
